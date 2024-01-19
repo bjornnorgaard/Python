@@ -1,5 +1,6 @@
 services:
   dev:
+    image: ursu/devcontainer-python:latest
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
