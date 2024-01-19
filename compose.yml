@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ursu/python:latest
+    build: .
+    env_file:
+      - .env
