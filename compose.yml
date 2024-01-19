@@ -1,6 +1,16 @@
 services:
+
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/workspace
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
   app:
-    image: ursu/python:latest
     build: .
     env_file:
       - .env
