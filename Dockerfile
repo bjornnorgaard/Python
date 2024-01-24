@@ -6,4 +6,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+RUN pytest
+
 CMD ["python", "src/main.py"]
