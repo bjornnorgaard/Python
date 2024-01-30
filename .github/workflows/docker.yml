@@ -1,18 +1,23 @@
-name: Docker Image CI
+name: Docker CI
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
 
-  build:
-
+  build-devcontainer:
+    name: "Build Devcontainer"
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --tag ursu/devcontainer-python:$(date +%s)
+    - name: Build devcontainer
+      run: docker build .devcontainer
+
+  build-runtime:
+    name: "Build Runtime"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build console runtime
+      run: docker build .
