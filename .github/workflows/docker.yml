@@ -7,17 +7,17 @@ on:
 jobs:
 
   build-devcontainer:
-    name: "Build Devcontainer Image"
+    name: Build Devcontainer
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Build devcontainer
-      run: docker build .devcontainer
+      run: docker build -f .devcontainer/Dockerfile .
 
   build-runtime:
-    name: "Build Runtime Image"
+    name: Build Runtime
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build console runtime
-      run: docker build .
+    - name: Build runtime
+      run: docker build -f Dockerfile .
