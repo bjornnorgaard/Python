@@ -1,6 +1,6 @@
-# Python
+# Python Devcontainer
 
-Demo devcontainer with Python.
+Testing devcontainers with Python.
 
 ## Setup Pycharm
 
