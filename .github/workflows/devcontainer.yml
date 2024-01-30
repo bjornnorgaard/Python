@@ -1,0 +1,17 @@
+name: Devcontainer CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/devcontainer.yml
+      - .devcontainer/**
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build docker image
+      run: docker build -f .devcontainer/Dockerfile .
