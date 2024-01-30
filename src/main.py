@@ -1,6 +1,6 @@
 import os
 
-from calculator import Calculator
+from maths.calculator import Calculator
 
 
 def main():
